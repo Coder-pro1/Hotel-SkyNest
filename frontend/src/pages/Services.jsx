@@ -8,7 +8,7 @@ import { serviceAPI } from '../utils/api';
 import { formatCurrency } from '../utils/helpers';
 import { FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import dashboardImage from '../assets/dashboard.jpeg';
+import servicesBgImage from '../assets/services-luxury.jpg';
 import '../styles/CommonPage.css';
 import { useAuth } from '../context/AuthContext';
 import { branchAPI } from '../utils/api';
@@ -250,9 +250,12 @@ const ServicesNew = () => {
 
     return (
         <Layout>
-            <div className="services-page common-page" style={{ backgroundImage: `url(${dashboardImage})` }}>
+            <div className={`page-container services-page ${isAdmin ? 'admin-site' : ''}`} style={{ backgroundImage: `url(${servicesBgImage})` }}>
                 <div className="page-header">
-                    <h1>Services Management</h1>
+                    <div>
+                        <h1 className="page-title">Services Management</h1>
+                        <p className="page-subtitle">Manage services catalogue and branch availability</p>
+                    </div>
                     {isAdmin && (
                         <button className="btn btn-primary" onClick={handleCreateService}>
                             + Add Service

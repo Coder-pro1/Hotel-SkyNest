@@ -8,11 +8,12 @@ import api from '../utils/api';
 import { formatCurrency } from '../utils/helpers';
 import { FaEdit, FaTrash, FaPlus, FaPercent, FaTag, FaChartLine } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import dashboardImage from '../assets/dashboard.jpeg';
+import taxDiscountBgImage from '../assets/tax-discount.jpg';
 import '../styles/CommonPage.css';
 
 const TaxDiscountManagement = () => {
     const { user } = useAuth();
+    const isAdmin = user?.role === 'Admin';
     const [activeTab, setActiveTab] = useState('taxes');
     const [taxes, setTaxes] = useState([]);
     const [discounts, setDiscounts] = useState([]);
@@ -220,7 +221,7 @@ const TaxDiscountManagement = () => {
 
     return (
         <Layout>
-            <div className="page-container" style={{ backgroundImage: `url(${dashboardImage})` }}>
+            <div className="page-container tax-discount-page common-page" style={{ backgroundImage: `url(${taxDiscountBgImage})` }}>
                 <div className="page-header">
                     <div>
                         <h1 className="page-title">Tax & Discount Management</h1>
@@ -232,8 +233,8 @@ const TaxDiscountManagement = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
                     <Card>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#dbeafe', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <FaPercent style={{ fontSize: '1.5rem', color: '#3b82f6' }} />
+                            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaPercent style={{ fontSize: '1.5rem', color: '#6b7280' }} />
                             </div>
                             <div>
                                 <p style={{ margin: 0, color: '#6b7280', fontSize: '0.875rem' }}>Active Taxes</p>
@@ -245,8 +246,8 @@ const TaxDiscountManagement = () => {
 
                     <Card>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#dcfce7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <FaTag style={{ fontSize: '1.5rem', color: '#16a34a' }} />
+                            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaTag style={{ fontSize: '1.5rem', color: '#6b7280' }} />
                             </div>
                             <div>
                                 <p style={{ margin: 0, color: '#6b7280', fontSize: '0.875rem' }}>Active Discounts</p>
@@ -258,8 +259,8 @@ const TaxDiscountManagement = () => {
 
                     <Card>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#fef3c7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <FaChartLine style={{ fontSize: '1.5rem', color: '#f59e0b' }} />
+                            <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaChartLine style={{ fontSize: '1.5rem', color: '#6b7280' }} />
                             </div>
                             <div>
                                 <p style={{ margin: 0, color: '#6b7280', fontSize: '0.875rem' }}>Impact on Bookings</p>

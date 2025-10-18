@@ -6,7 +6,7 @@ import { reportAPI } from '../utils/api';
 import { formatCurrency, formatDate } from '../utils/helpers';
 import { FaDownload, FaChartBar, FaCalendar } from 'react-icons/fa';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
-import dashboardImage from '../assets/dashboard.jpeg';
+import reportsBgImage from '../assets/reports-analytics.jpg';
 import '../styles/Reports.css';
 import '../styles/CommonPage.css';
 
@@ -58,7 +58,7 @@ const Reports = () => {
 
     return (
         <Layout>
-            <div className="reports-page common-page" style={{ backgroundImage: `url(${dashboardImage})` }}>
+            <div className="reports-page common-page" style={{ backgroundImage: `url(${reportsBgImage})` }}>
                 <div className="page-header">
                     <h1>Reports & Analytics</h1>
                 </div>

@@ -6,7 +6,7 @@ import { paymentAPI } from '../utils/api';
 import { formatDateTime, formatCurrency, getStatusClass } from '../utils/helpers';
 import { FaFilter, FaTimes, FaSearch, FaMoneyBillWave, FaCheckCircle, FaClock } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import dashboardImage from '../assets/dashboard.jpeg';
+import paymentsBgImage from '../assets/payments-money.jpg';
 import '../styles/CommonPage.css';
 
 const Payments = () => {
@@ -111,7 +111,7 @@ const Payments = () => {
 
     return (
         <Layout>
-            <div className="payments-page common-page" style={{ backgroundImage: `url(${dashboardImage})` }}>
+            <div className="payments-page common-page" style={{ backgroundImage: `url(${paymentsBgImage})` }}>
                 <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
                     <div>
                         <h1>Payments Management</h1>
@@ -129,7 +129,7 @@ const Payments = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                     <Card style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaMoneyBillWave style={{ fontSize: '2.5rem', opacity: 0.9 }} />
+                            <FaMoneyBillWave style={{ fontSize: '2.5rem', opacity: 0.9, color: '#6b7280' }} />
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.total}</h3>
                                 <p style={{ margin: 0, opacity: 0.9 }}>Total Payments</p>
@@ -138,7 +138,7 @@ const Payments = () => {
                     </Card>
                     <Card style={{ background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaMoneyBillWave style={{ fontSize: '2.5rem', opacity: 0.9 }} />
+                            <FaMoneyBillWave style={{ fontSize: '2.5rem', opacity: 0.9, color: '#6b7280' }} />
                             <div>
                                 <h3 style={{ fontSize: '1.5rem', margin: 0 }}>{formatCurrency(stats.totalAmount)}</h3>
                                 <p style={{ margin: 0, opacity: 0.9 }}>Total Amount</p>
@@ -147,7 +147,7 @@ const Payments = () => {
                     </Card>
                     <Card style={{ background: 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaCheckCircle style={{ fontSize: '2.5rem', opacity: 0.9 }} />
+                            <FaCheckCircle style={{ fontSize: '2.5rem', opacity: 0.9, color: '#6b7280' }} />
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.completed}</h3>
                                 <p style={{ margin: 0, opacity: 0.9 }}>Completed</p>
@@ -156,7 +156,7 @@ const Payments = () => {
                     </Card>
                     <Card style={{ background: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaClock style={{ fontSize: '2.5rem', opacity: 0.9 }} />
+                            <FaClock style={{ fontSize: '2.5rem', opacity: 0.9, color: '#6b7280' }} />
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.pending}</h3>
                                 <p style={{ margin: 0, opacity: 0.9 }}>Pending</p>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import Modal from '../components/Modal';
@@ -6,11 +7,14 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { serviceRequestAPI } from '../utils/api';
 import { formatDateTime, formatCurrency } from '../utils/helpers';
 import { toast } from 'react-toastify';
-import { FaCheckCircle, FaTimesCircle, FaClock, FaEye, FaFilter, FaTimes } from 'react-icons/fa';
+import { FaCheckCircle, FaTimesCircle, FaClock, FaEye, FaFilter, FaTimes, FaClipboard } from 'react-icons/fa';
+import serviceRequestsBgImage from '../assets/service-requests.jpg';
 import dashboardImage from '../assets/dashboard.jpeg';
 import '../styles/CommonPage.css';
 
 const ServiceRequests = () => {
+    const { user } = useAuth();
+    const isAdmin = user?.role === 'Admin';
     const [requests, setRequests] = useState([]);
     const [filteredRequests, setFilteredRequests] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -147,11 +151,11 @@ const ServiceRequests = () => {
 
     return (
         <Layout>
-            <div className="service-requests-page common-page" style={{ backgroundImage: `url(${dashboardImage})` }}>
-                <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+            <div className={`page-container service-requests-page ${isAdmin ? 'admin-site' : ''}`} style={{ backgroundImage: `url(${isAdmin ? serviceRequestsBgImage : dashboardImage})` }}>
+                <div className="page-header">
                     <div>
-                        <h1>Service Requests</h1>
-                        <p>Manage guest service requests and approvals</p>
+                        <h1 className="page-title">Service Requests</h1>
+                        <p className="page-subtitle">Manage guest service requests and approvals</p>
                     </div>
                     <button 
                         className="btn btn-secondary"
@@ -165,7 +169,9 @@ const ServiceRequests = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                     <Card style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <div style={{ fontSize: '2rem' }}>📋</div>
+                            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: isAdmin ? '#f3f4f6' : '#dbeafe', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaClipboard style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#3b82f6' }} />
+                            </div>
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.total}</h3>
                                 <p style={{ margin: 0, opacity: 0.9 }}>Total Requests</p>
@@ -174,7 +180,9 @@ const ServiceRequests = () => {
                     </Card>
                     <Card style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaClock style={{ fontSize: '2rem' }} />
+                            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: isAdmin ? '#f3f4f6' : '#fef3c7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaClock style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#f59e0b' }} />
+                            </div>
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.pending}</h3>
                                 <p style={{ margin: 0, opacity: 0.9 }}>Pending</p>
@@ -183,7 +191,9 @@ const ServiceRequests = () => {
                     </Card>
                     <Card style={{ background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaCheckCircle style={{ fontSize: '2rem' }} />
+                            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: isAdmin ? '#f3f4f6' : '#d1fae5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaCheckCircle style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#059669' }} />
+                            </div>
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.approved}</h3>
                                 <p style={{ margin: 0, opacity: 0.9 }}>Approved</p>
@@ -192,7 +202,9 @@ const ServiceRequests = () => {
                     </Card>
                     <Card style={{ background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaTimesCircle style={{ fontSize: '2rem' }} />
+                            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: isAdmin ? '#f3f4f6' : '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaTimesCircle style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#dc2626' }} />
+                            </div>
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.rejected}</h3>
                                 <p style={{ margin: 0, opacity: 0.9 }}>Rejected</p>

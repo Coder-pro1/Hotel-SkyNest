@@ -7,7 +7,7 @@ import api from '../utils/api';
 import { formatCurrency } from '../utils/helpers';
 import { FaEdit, FaTrash, FaPlus, FaMoneyBillWave } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import dashboardImage from '../assets/dashboard.jpeg';
+import paymentsBgImage from '../assets/payments-money.jpg';
 import '../styles/CommonPage.css';
 
 const FeeManagement = () => {
@@ -112,7 +112,7 @@ const FeeManagement = () => {
 
     return (
         <Layout>
-            <div className="page-container" style={{ backgroundImage: `url(${dashboardImage})` }}>
+            <div className="fees-page common-page" style={{ backgroundImage: `url(${paymentsBgImage})` }}>
                 <div className="page-header">
                     <div>
                         <h1 className="page-title">Fee Management</h1>
@@ -127,12 +127,12 @@ const FeeManagement = () => {
                             width: '60px', 
                             height: '60px', 
                             borderRadius: '50%', 
-                            backgroundColor: '#fbbf24', 
+                            backgroundColor: '#f3f4f6', 
                             display: 'flex', 
                             alignItems: 'center', 
                             justifyContent: 'center' 
                         }}>
-                            <FaMoneyBillWave style={{ fontSize: '1.5rem', color: 'white' }} />
+                            <FaMoneyBillWave style={{ fontSize: '1.5rem', color: '#6b7280' }} />
                         </div>
                         <div>
                             <p style={{ margin: 0, color: '#92400e', fontSize: '0.875rem', fontWeight: 600 }}>Active Fees Impact on Bookings</p>

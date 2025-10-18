@@ -13,6 +13,246 @@
   margin: 0;
 }
 
+/* Payments page: mirror Bookings/Rooms/Services treatment */
+.payments-page {
+  max-width: 1400px;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 32px 40px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.admin-site.payments-page::before,
+.payments-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.payments-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.payments-page .page-header {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  backdrop-filter: none;
+  margin-bottom: 32px;
+}
+
+/* Fees page: mirror Payments/Rooms treatment */
+.fees-page {
+  max-width: 1400px;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 32px 40px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.admin-site.fees-page::before,
+.fees-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fees-page > * { position: relative; z-index: 1; }
+
+.fees-page .page-header { background: transparent; border-radius: 0; padding: 0; backdrop-filter: none; margin-bottom: 32px; }
+
+/* Right-align stats text like Rooms */
+.fees-page .card h2 { text-align: right; }
+.fees-page .card p { text-align: right; }
+
+/* Reports page: mirror Bookings/Rooms/Services treatment */
+.reports-page {
+  max-width: 1400px;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 32px 40px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.admin-site.reports-page::before,
+.reports-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reports-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.reports-page .page-header {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  backdrop-filter: none;
+  margin-bottom: 32px;
+}
+
+/* Service Requests page: mirror Bookings/Rooms/Services treatment */
+.service-requests-page {
+  max-width: 1400px;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 32px 40px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.admin-site.service-requests-page::before,
+.service-requests-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-requests-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-requests-page .page-header {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  backdrop-filter: none;
+  margin-bottom: 32px;
+}
+
+/* Tax & Discount page: mirror Bookings/Rooms treatment */
+.tax-discount-page {
+  max-width: 1400px;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 32px 40px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.admin-site.tax-discount-page::before,
+.tax-discount-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tax-discount-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tax-discount-page .page-header {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  backdrop-filter: none;
+  margin-bottom: 24px;
+}
+
+/* Right-align stats cards content similar to Rooms when requested */
+.tax-discount-page .page-header + div .card {
+  text-align: right;
+}
+.tax-discount-page .page-header + div .card h2 {
+  font-weight: 700;
+  color: #111827;
+}
+.tax-discount-page .page-header + div .card p {
+  color: #6b7280;
+}
+
+/* Guests page: mirror Bookings/Rooms/Services treatment */
+.guests-page {
+  max-width: 1400px;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 32px 40px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.admin-site.guests-page::before,
+.guests-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.guests-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.guests-page .page-header {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  backdrop-filter: none;
+  margin-bottom: 32px;
+}
+
+.guests-page .page-header .page-title {
+  color: #212529;
+  font-weight: 700;
+}
+
+.guests-page .page-header .page-subtitle {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.admin-site.common-page::before,
 .common-page::before {
   content: '';
   position: absolute;
@@ -46,6 +286,87 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Rooms page header: match Bookings/Services typography (dark text) */
+.rooms-page .page-header .page-title {
+  color: #212529;
+  text-shadow: none;
+  font-weight: 700;
+}
+
+.rooms-page .page-header .page-subtitle {
+  color: #6b7280;
+  text-shadow: none;
+  font-weight: 500;
+}
+
+/* Rooms page: darken the global overlay for better text contrast */
+.rooms-page {
+  max-width: 1400px;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 32px 40px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.rooms-page .page-header {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  backdrop-filter: none;
+}
+
+/* Rooms page: light mist overlay like Bookings */
+.admin-site.rooms-page::before,
+.rooms-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rooms-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Rooms page: stats cards white theme */
+.rooms-page .page-header + div .card {
+  background: #ffffff !important;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.rooms-page .page-header + div .card:hover {
+  background: #f3f4f6 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Rooms stats: text alignment and weights similar to dashboard */
+.rooms-page .page-header + div .card h3 {
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #111827;
+}
+
+.rooms-page .page-header + div .card p {
+  margin-top: 2px;
+  color: #6b7280 !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .common-page {
@@ -55,4 +376,78 @@
   .common-page .page-header h1 {
     font-size: 24px;
   }
+}
+
+/* Services page: mirror Rooms background treatment */
+.services-page {
+  max-width: 1400px;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 32px 40px;
+  border-radius: 0;
+  margin: 0;
+}
+
+.admin-site.services-page::before,
+.services-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.services-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.services-page .page-header {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  backdrop-filter: none;
+}
+
+.services-page .page-header .page-title {
+  color: #212529;
+  font-weight: 700;
+}
+
+.services-page .page-header .page-subtitle {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Admin-only: table headers color */
+.admin-site table thead th,
+.admin-site table th {
+  color: #6896a7 !important;
+}
+
+/* Support page: admin-only mist overlay */
+.admin-site.support-page::before,
+.support-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Profile page: admin-only mist overlay */
+.admin-site.profile-page::before,
+.profile-page::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(248, 249, 250, 0.88);
+  pointer-events: none;
+  z-index: 0;
 }

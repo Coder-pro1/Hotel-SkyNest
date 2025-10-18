@@ -6,13 +6,14 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { useAuth } from '../context/AuthContext';
 import api, { roomAPI, branchAPI, roomTypeAPI } from '../utils/api';
 import { formatCurrency, getStatusClass } from '../utils/helpers';
-import { FaEdit, FaEye, FaFilter, FaTimes, FaPlus } from 'react-icons/fa';
+import { FaEdit, FaEye, FaFilter, FaTimes, FaPlus, FaHotel, FaDoorOpen, FaBed, FaTools } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import dashboardImage from '../assets/dashboard.jpeg';
+import roomBgImage from '../assets/luxury-room.jpg';
 import '../styles/CommonPage.css';
 
 const Rooms = () => {
     const { user } = useAuth();
+    const isAdmin = user?.role === 'Admin';
     const [rooms, setRooms] = useState([]);
     const [filteredRooms, setFilteredRooms] = useState([]);
     const [branches, setBranches] = useState([]);
@@ -161,44 +162,78 @@ const Rooms = () => {
 
     return (
         <Layout>
-            <div className="rooms-page common-page" style={{ backgroundImage: `url(${dashboardImage})`, overflow: 'visible' }}>
-                <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+            <div className={`page-container rooms-page ${isAdmin ? 'admin-site' : ''}`} style={{ backgroundImage: `url(${roomBgImage})` }}>
+                <div className="page-header">
                     <div>
-                        <h1>Rooms Management</h1>
-                        <p>Manage and monitor room availability</p>
+                        <h1 className="page-title">Rooms Management</h1>
+                        <p className="page-subtitle">Manage and monitor room availability</p>
                     </div>
-                    <button 
-                        className="btn btn-secondary"
-                        onClick={() => setShowFilters(!showFilters)}
-                    >
-                        <FaFilter /> {showFilters ? 'Hide' : 'Show'} Filters
-                    </button>
+                    <div>
+                        <button
+                            className="btn btn-secondary"
+                            onClick={() => setShowFilters(!showFilters)}
+                        >
+                            <FaFilter /> {showFilters ? 'Hide' : 'Show'} Filters
+                        </button>
+                    </div>
                 </div>
 
                 {/* Stats Cards */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
-                    <Card style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', color: 'white', border: 'none' }}>
-                        <div style={{ textAlign: 'center' }}>
-                            <h3 style={{ fontSize: '2.5rem', margin: 0 }}>{stats.total}</h3>
-                            <p style={{ margin: 0, opacity: 0.9 }}>Total Rooms</p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
+                    <Card style={{ color: 'inherit', border: 'none' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <div style={{ 
+                                width: '56px', height: '56px', borderRadius: '50%', 
+                                background: isAdmin ? '#f3f4f6' : '#dbeafe', display: 'flex', alignItems: 'center', justifyContent: 'center'
+                            }}>
+                                <FaHotel style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#3b82f6' }} />
+                            </div>
+                            <div>
+                                <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.total}</h3>
+                                <p style={{ margin: 0, opacity: 0.9 }}>Total Rooms</p>
+                            </div>
                         </div>
                     </Card>
-                    <Card style={{ background: 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)', color: 'white', border: 'none' }}>
-                        <div style={{ textAlign: 'center' }}>
-                            <h3 style={{ fontSize: '2.5rem', margin: 0 }}>{stats.available}</h3>
-                            <p style={{ margin: 0, opacity: 0.9 }}>Available</p>
+                    <Card style={{ color: 'inherit', border: 'none' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <div style={{ 
+                                width: '56px', height: '56px', borderRadius: '50%', 
+                                background: isAdmin ? '#f3f4f6' : '#d1fae5', display: 'flex', alignItems: 'center', justifyContent: 'center'
+                            }}>
+                                <FaDoorOpen style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#059669' }} />
+                            </div>
+                            <div>
+                                <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.available}</h3>
+                                <p style={{ margin: 0, opacity: 0.9 }}>Available</p>
+                            </div>
                         </div>
                     </Card>
-                    <Card style={{ background: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)', color: 'white', border: 'none' }}>
-                        <div style={{ textAlign: 'center' }}>
-                            <h3 style={{ fontSize: '2.5rem', margin: 0 }}>{stats.occupied}</h3>
-                            <p style={{ margin: 0, opacity: 0.9 }}>Occupied</p>
+                    <Card style={{ color: 'inherit', border: 'none' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <div style={{ 
+                                width: '56px', height: '56px', borderRadius: '50%', 
+                                background: isAdmin ? '#f3f4f6' : '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center'
+                            }}>
+                                <FaBed style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#dc2626' }} />
+                            </div>
+                            <div>
+                                <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.occupied}</h3>
+                                <p style={{ margin: 0, opacity: 0.9 }}>Occupied</p>
+                            </div>
                         </div>
                     </Card>
-                    <Card style={{ background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', color: 'white', border: 'none' }}>
-                        <div style={{ textAlign: 'center' }}>
-                            <h3 style={{ fontSize: '2.5rem', margin: 0 }}>{stats.maintenance}</h3>
-                            <p style={{ margin: 0, opacity: 0.9 }}>Maintenance</p>
+                    <Card style={{ color: 'inherit', border: 'none' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                            <div style={{ 
+                                width: '56px', height: '56px', borderRadius: '50%', 
+                                background: isAdmin ? '#f3f4f6' : '#fef3c7', display: 'flex', alignItems: 'center', justifyContent: 'center'
+                            }}>
+                                <FaTools style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#f59e0b' }} />
+                            </div>
+                            <div>
+                                <h3 style={{ fontSize: '2rem', margin: 0 }}>{stats.maintenance}</h3>
+                                <p style={{ margin: 0, opacity: 0.9 }}>Maintenance</p>
+                            </div>
                         </div>
                     </Card>
                 </div>

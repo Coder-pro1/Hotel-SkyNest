@@ -9,6 +9,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { userAPI, branchAPI, authAPI } from '../utils/api';
 import { useAuth } from '../context/AuthContext';
 import { FaPlus, FaEdit, FaTrash, FaKey } from 'react-icons/fa';
+import usersBgImage from '../assets/users-crowd.jpg';
 import dashboardImage from '../assets/dashboard.jpeg';
 import '../styles/Users.css';
 import '../styles/CommonPage.css';
@@ -16,6 +17,7 @@ import '../styles/CommonPage.css';
 const Users = () => {
     const navigate = useNavigate();
     const { user: currentUser } = useAuth();
+    const isAdmin = currentUser?.role === 'Admin';
     const [users, setUsers] = useState([]);
     const [branches, setBranches] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -189,7 +191,7 @@ const Users = () => {
 
     return (
         <Layout>
-            <div className="users-page common-page" style={{ backgroundImage: `url(${dashboardImage})` }}>
+            <div className={`users-page common-page ${isAdmin ? 'admin-site' : ''}`} style={{ backgroundImage: `url(${isAdmin ? usersBgImage : dashboardImage})` }}>
                 <div className="page-header">
                     <h1>User Management</h1>
                     <button

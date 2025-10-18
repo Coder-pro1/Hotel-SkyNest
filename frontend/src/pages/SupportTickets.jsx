@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
@@ -8,10 +9,12 @@ import { supportAPI } from '../utils/api';
 import { formatDateTime } from '../utils/helpers';
 import { toast } from 'react-toastify';
 import { FaEye, FaFilter, FaTimes, FaClock, FaCheckCircle, FaExclamationTriangle } from 'react-icons/fa';
-import dashboardImage from '../assets/dashboard.jpeg';
+import supportBgImage from '../assets/support-communication.jpg';
 import '../styles/CommonPage.css';
 
 const SupportTickets = () => {
+    const { user } = useAuth();
+    const isAdmin = user?.role === 'Admin';
     const navigate = useNavigate();
     const [tickets, setTickets] = useState([]);
     const [filteredTickets, setFilteredTickets] = useState([]);
@@ -185,9 +188,9 @@ const SupportTickets = () => {
     return (
         <Layout>
             <div 
-                className="support-page common-page" 
+                className={`support-page common-page`} 
                 style={{ 
-                    backgroundImage: `url(${dashboardImage})`,
+                    backgroundImage: `url(${supportBgImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
@@ -213,7 +216,9 @@ const SupportTickets = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '2rem' }}>
                     <Card style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaClock style={{ fontSize: '2rem' }} />
+                            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: isAdmin ? '#f3f4f6' : '#dbeafe', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaClock style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#3b82f6' }} />
+                            </div>
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>
                                     {tickets.filter(t => t.status === 'Open').length}
@@ -224,7 +229,9 @@ const SupportTickets = () => {
                     </Card>
                     <Card style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaExclamationTriangle style={{ fontSize: '2rem' }} />
+                            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: isAdmin ? '#f3f4f6' : '#fef3c7', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaExclamationTriangle style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#f59e0b' }} />
+                            </div>
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>
                                     {tickets.filter(t => t.status === 'In Progress').length}
@@ -235,7 +242,9 @@ const SupportTickets = () => {
                     </Card>
                     <Card style={{ background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', color: 'white', border: 'none' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                            <FaCheckCircle style={{ fontSize: '2rem' }} />
+                            <div style={{ width: '56px', height: '56px', borderRadius: '50%', background: isAdmin ? '#f3f4f6' : '#d1fae5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                <FaCheckCircle style={{ fontSize: '1.5rem', color: isAdmin ? '#6b7280' : '#059669' }} />
+                            </div>
                             <div>
                                 <h3 style={{ fontSize: '2rem', margin: 0 }}>
                                     {tickets.filter(t => t.status === 'Resolved').length}

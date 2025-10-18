@@ -7,7 +7,7 @@ import { useAuth } from '../context/AuthContext';
 import { guestAPI } from '../utils/api';
 import { FaEdit, FaTrash, FaEye, FaPlus, FaSearch } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import dashboardImage from '../assets/dashboard.jpeg';
+import guestsBgImage from '../assets/guests-lobby.jpg';
 import '../styles/CommonPage.css';
 
 const Guests = () => {
@@ -144,7 +144,7 @@ const Guests = () => {
 
     return (
         <Layout>
-            <div className="guests-page common-page" style={{ backgroundImage: `url(${dashboardImage})` }}>
+            <div className="guests-page common-page" style={{ backgroundImage: `url(${guestsBgImage})` }}>
                 <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
                     <div>
                         <h1>Guests Management</h1>

@@ -23,17 +23,20 @@
 
 <table>
 <tr>
-<td width="33%">
-<img src="readme_photos/admin_dashboard.png" alt="Admin Dashboard" width="100%"/>
-<p align="center"><b>Admin Dashboard</b><br/>Complete system control & analytics</p>
+<td width="33%" align="center">
+<img src="readme_photos/admin_dashboard.png" alt="Admin Dashboard" style="width: 100%; height: auto;"/>
+<br/><b>Admin Dashboard</b>
+<br/><sub>Complete system control & analytics</sub>
 </td>
-<td width="33%">
-<img src="readme_photos/receptionist_dashboard.png" alt="Receptionist Dashboard" width="100%"/>
-<p align="center"><b>Receptionist Dashboard</b><br/>Booking & payment management</p>
+<td width="33%" align="center">
+<img src="readme_photos/receptionist_dashboard.png" alt="Receptionist Dashboard" style="width: 100%; height: auto;"/>
+<br/><b>Receptionist Dashboard</b>
+<br/><sub>Booking & payment management</sub>
 </td>
-<td width="33%">
-<img src="readme_photos/guest_dashboard.png" alt="Guest Dashboard" width="100%"/>
-<p align="center"><b>Guest Dashboard</b><br/>Personal bookings & services</p>
+<td width="33%" align="center">
+<img src="readme_photos/guest_dashboard.png" alt="Guest Dashboard" style="width: 100%; height: auto;"/>
+<br/><b>Guest Dashboard</b>
+<br/><sub>Personal bookings & services</sub>
 </td>
 </tr>
 </table>
@@ -42,17 +45,20 @@
 
 <table>
 <tr>
-<td width="33%" rowspan="2">
-<img src="readme_photos/login_page.png" alt="Login Page" width="100%"/>
-<p align="center"><b>Secure Login</b><br/>JWT authentication & email verification</p>
+<td width="33%" align="center">
+<img src="readme_photos/login_page.png" alt="Login Page" style="width: 100%; height: auto;"/>
+<br/><b>Secure Login</b>
+<br/><sub>JWT authentication & email verification</sub>
 </td>
-<td width="33%">
-<img src="readme_photos/booking.png" alt="Booking Management" width="100%"/>
-<p align="center"><b>Booking System</b><br/>Real-time availability & pricing</p>
+<td width="33%" align="center">
+<img src="readme_photos/booking.png" alt="Booking Management" style="width: 100%; height: auto;"/>
+<br/><b>Booking System</b>
+<br/><sub>Real-time availability & pricing</sub>
 </td>
-<td width="33%">
-<img src="readme_photos/guest_bill.png" alt="Guest Bill" width="100%"/>
-<p align="center"><b>Live Billing</b><br/>Detailed breakdown with taxes & discounts</p>
+<td width="33%" align="center">
+<img src="readme_photos/guest_bill.png" alt="Guest Bill" style="width: 100%; height: auto;"/>
+<br/><b>Live Billing</b>
+<br/><sub>Detailed breakdown with taxes & discounts</sub>
 </td>
 </tr>
 </table>

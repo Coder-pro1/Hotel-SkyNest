@@ -19,10 +19,27 @@
 
 <div align="center">
 
-### 🎯 Role-Based Dashboards
-
 <table>
 <tr>
+<td width="33%" align="center">
+<img src="readme_photos/guest_dashboard.png" alt="Guest Dashboard" style="width: 100%; height: auto;"/>
+<br/><b>Guest Dashboard</b>
+<br/><sub>Personal bookings & services</sub>
+</td>
+<td width="33%" align="center">
+  <img src="readme_photos/guest_bill.png" alt="Guest Bill" style="width: 100%; height: auto;"/>
+  <br/><b>Live Billing</b>
+  <br/><sub>Detailed breakdown with taxes & discounts</sub>
+  <br/><br/>
+  <img src="readme_photos/login_page.png" alt="Guest Bill Extra" style="width: 100%; height: auto;"/>
+  <br/><b>Login and Signup</b>
+  <br/><sub>With JWT token based Authentication</sub>
+</td>
+
+</tr>
+</table>
+
+<table>
 <td width="33%" align="center">
 <img src="readme_photos/admin_dashboard.png" alt="Admin Dashboard" style="width: 100%; height: auto;"/>
 <br/><b>Admin Dashboard</b>
@@ -33,33 +50,8 @@
 <br/><b>Receptionist Dashboard</b>
 <br/><sub>Booking & payment management</sub>
 </td>
-<td width="33%" align="center">
-<img src="readme_photos/guest_dashboard.png" alt="Guest Dashboard" style="width: 100%; height: auto;"/>
-<br/><b>Guest Dashboard</b>
-<br/><sub>Personal bookings & services</sub>
-</td>
-</tr>
-</table>
 
-### 🔑 Authentication & Key Features
 
-<table>
-<tr>
-<td width="33%" align="center">
-<img src="readme_photos/login_page.png" alt="Login Page" style="width: 100%; height: auto;"/>
-<br/><b>Secure Login</b>
-<br/><sub>JWT authentication & email verification</sub>
-</td>
-<td width="33%" align="center">
-<img src="readme_photos/booking.png" alt="Booking Management" style="width: 100%; height: auto;"/>
-<br/><b>Booking System</b>
-<br/><sub>Real-time availability & pricing</sub>
-</td>
-<td width="33%" align="center">
-<img src="readme_photos/guest_bill.png" alt="Guest Bill" style="width: 100%; height: auto;"/>
-<br/><b>Live Billing</b>
-<br/><sub>Detailed breakdown with taxes & discounts</sub>
-</td>
 </tr>
 </table>
 

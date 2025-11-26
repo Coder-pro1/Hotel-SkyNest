@@ -19,28 +19,43 @@
 
 <div align="center">
 
-### Login Interface
-![Login Page](readme_photos/login_page.png)
+### 🎯 Role-Based Dashboards
 
-### Admin Dashboard
-![Admin Dashboard](readme_photos/admin_dashboard.png)
-*Complete system control: User management, branch configuration, financial settings, and comprehensive reports*
+<table>
+<tr>
+<td width="33%">
+<img src="readme_photos/admin_dashboard.png" alt="Admin Dashboard" width="100%"/>
+<p align="center"><b>Admin Dashboard</b><br/>Complete system control & analytics</p>
+</td>
+<td width="33%">
+<img src="readme_photos/receptionist_dashboard.png" alt="Receptionist Dashboard" width="100%"/>
+<p align="center"><b>Receptionist Dashboard</b><br/>Booking & payment management</p>
+</td>
+<td width="33%">
+<img src="readme_photos/guest_dashboard.png" alt="Guest Dashboard" width="100%"/>
+<p align="center"><b>Guest Dashboard</b><br/>Personal bookings & services</p>
+</td>
+</tr>
+</table>
 
-### Receptionist Dashboard
-![Receptionist Dashboard](readme_photos/receptionist_dashboard.png)
-*Day-to-day operations: Booking management, check-in/out, payment processing, and service requests*
+### 🔑 Authentication & Key Features
 
-### Guest Dashboard
-![Guest Dashboard](readme_photos/guest_dashboard.png)
-*Guest portal: View bookings, request services, track payments, and manage profile*
-
-### Key Features
-
-![Booking Management](readme_photos/booking.png)
-*Real-time booking system with availability checking and automatic pricing*
-
-![Guest Bill View](readme_photos/guest_bill.png)
-*Detailed bill breakdown with room charges, services, taxes, discounts, and payment history*
+<table>
+<tr>
+<td width="33%" rowspan="2">
+<img src="readme_photos/login_page.png" alt="Login Page" width="100%"/>
+<p align="center"><b>Secure Login</b><br/>JWT authentication & email verification</p>
+</td>
+<td width="33%">
+<img src="readme_photos/booking.png" alt="Booking Management" width="100%"/>
+<p align="center"><b>Booking System</b><br/>Real-time availability & pricing</p>
+</td>
+<td width="33%">
+<img src="readme_photos/guest_bill.png" alt="Guest Bill" width="100%"/>
+<p align="center"><b>Live Billing</b><br/>Detailed breakdown with taxes & discounts</p>
+</td>
+</tr>
+</table>
 
 </div>
 
@@ -108,7 +123,6 @@ npm run dev  # http://localhost:5173
 - Guest: `guest@skynest.com` / `guest123`
 
 
-
 ## 🛠️ Tech Stack
 
 **Frontend:** React 18, Vite, React Router, Axios, CSS3, Lucide Icons  
@@ -154,10 +168,6 @@ Complete REST API with role-based access control:
 - Comprehensive reporting endpoints
 - Payment breakdown and receipt generation
 
-## 🤝 Contributing
-
-Contributions welcome! Fork the repo, create a feature branch, commit changes, and open a Pull Request.
-
 ## 📝 License
 
 MIT License - see LICENSE file for details.
@@ -165,16 +175,7 @@ MIT License - see LICENSE file for details.
 ## 📞 Support
 
 - **GitHub Issues**: [Report bugs or request features](https://github.com/yourusername/Hotel-SkyNest/issues)
-- **Email**: support@hotelskynest.com
 
 ---
 
-<div align="center">
 
-**Built with ❤️ for modern hotel management**
-
-⭐ Star us on GitHub!
-
-[Report Bug](https://github.com/yourusername/Hotel-SkyNest/issues) · [Request Feature](https://github.com/yourusername/Hotel-SkyNest/issues)
-
-</div>
